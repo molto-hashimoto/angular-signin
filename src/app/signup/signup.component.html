@@ -1,0 +1,31 @@
+<mat-card class="signup">
+    <h1>Sign Up</h1>
+    <mat-form-field class='signup__item'>
+        <mat-label>email</mat-label>
+        <input matInput type="email"
+            [(ngModel)]="account.email"
+            required autofocus>
+    </mat-form-field>
+    <br>
+    <mat-form-field class='signup__item'>
+        <mat-label>password</mat-label>
+        <input matInput type="password"
+            [(ngModel)]="account.password"
+            required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class='signup__item'>
+        <mat-label>password confirmation</mat-label>
+        <input matInput type="password"
+            [(ngModel)]="account.passwordConfirmation"
+            required>
+    </mat-form-field>
+    <br>
+    <br>
+    <button class='signup__button'
+        type="button" mat-raised-button
+        (click)="signup()"        
+        color="primary">
+        Sign Up
+    </button>
+</mat-card>

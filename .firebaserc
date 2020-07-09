@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "rooms-d373b": {
+      "hosting": {
+        "signin": [
+          "rooms-d373b"
+        ]
+      }
+    }
+  }
+}
