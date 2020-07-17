@@ -1,3 +1,5 @@
+import { TasksComponent } from './tasks/tasks.component';
+import { ProjectsComponent } from './projects/projects.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoggedinGuard } from './guards/loggedin.guard';
 import { LoadingComponent } from './loading/loading.component';
@@ -25,11 +27,22 @@ const routes: Routes = [
   },
   {
     path: 'loading',
-    component: LoadingComponent
+    component: LoadingComponent,
+    canActivate: [LoggedinGuard]
   },
   {
     path: 'room',
     component: RoomComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'projects',
+    component: ProjectsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'tasks/:no',
+    component: TasksComponent,
     canActivate: [AuthGuard]
   }
 ];

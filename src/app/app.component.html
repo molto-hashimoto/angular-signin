@@ -1,10 +1,14 @@
-<mat-toolbar  color="primary">
+<mat-toolbar  class="app-toolbar" color="primary">
+  <img src="../favicon.ico" alt="Angular">
   <button routerLink="/" mat-button>ROOM</button>
-  <span class="spacer"></span>
-
-  <button *ngIf="user$ | async as user" mat-button>
-    {{user.email}}
+  <button *ngIf="user$ | async as user" routerLink="projects" mat-button>
+    Project
   </button>
+  <span class="spacer"></span>
+  <mat-icon *ngIf="user$ | async as user"
+    matTooltip={{user.email}}>
+    account_circle
+  </mat-icon>
   <button *ngIf="!(user$ | async) && url=='/signup'" routerLink="login" mat-button>
     Login
   </button>
@@ -15,4 +19,6 @@
     Logout
   </button>
 </mat-toolbar>
-<router-outlet></router-outlet>
+<div class="app-contents">
+  <router-outlet></router-outlet>
+</div>

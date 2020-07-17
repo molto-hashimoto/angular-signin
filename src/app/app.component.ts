@@ -20,7 +20,7 @@ export class AppComponent {
   ngOnInit(): void {
     this.router.events
       .pipe(filter(e => e instanceof NavigationEnd))
-      .subscribe((e: NavigationEnd) => this.url = e.url)
+      .subscribe((e: NavigationEnd) => this.url = e.url);
   }
   logout() {
     this.authService.logout();
